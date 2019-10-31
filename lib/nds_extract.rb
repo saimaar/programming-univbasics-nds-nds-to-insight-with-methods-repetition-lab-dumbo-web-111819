@@ -39,15 +39,12 @@ def list_of_directors(source)
 end
 
 def total_gross(source)
- obj =  directors_totals(source)
- array = list_of_directors(source)
+  array =  source
  i = 0
- total = 0
+ totals = 0
  while i < array.length do
-   key = array[i]
-   obj_total = obj[key]
-   total += obj_total
-   
+   obj = array[i]
+   totals += gross_for_director(obj)
    i+=1
  end
  
@@ -59,7 +56,7 @@ def total_gross(source)
   # returned by directors_totals, and add it to a running total. When done,
   # return the total
   
-  return total 
+  return totals 
 end
 
 
